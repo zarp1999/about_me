@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daria</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f5e6ff 0%, #fce4ec 50%, #e8f4fd 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      padding: 32px 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 8px 32px rgba(180, 120, 220, 0.25), 0 2px 8px rgba(0,0,0,0.08);
+      display: block;
+    }
+
+    .avatar-ring {
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #2d2d2d;
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+    }
+
+    .links {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.01em;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .link-btn:active {
+      transform: translateY(0);
+      opacity: 0.9;
+    }
+
+    .link-btn svg {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+    }
+
+    .link-btn span {
+      flex: 1;
+      text-align: center;
+      padding-right: 22px; /* visually center text alongside icon */
+    }
+
+    /* Instagram */
+    .instagram {
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+
+    /* Facebook */
+    .facebook {
+      background: #1877F2;
+    }
+
+    /* LINE */
+    .line {
+      background: #06C755;
+    }
+
+    footer {
+      margin-top: 36px;
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="avatar-wrapper">
+      <div class="avatar-ring"></div>
+      <img
+        src="719126328_27354057824280487_2114773321052504188_n.jpg"
+        alt="Daria"
+        class="avatar"
+      />
+    </div>
+
+    <h1>Daria</h1>
+
+    <div class="links">
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/d_a__r_ia/" class="link-btn instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="white" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1.25" fill="white"/>
+        </svg>
+        <span>Instagram</span>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/profile.php?id=100013280554250" class="link-btn facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12z"/>
+        </svg>
+        <span>Facebook</span>
+      </a>
+
+      <!-- LINE -->
+      <a href="https://line.me/ti/p/YOUR_LINE_ID" class="link-btn line" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M19.952 10.636C19.952 6.938 16.393 3.955 12 3.955S4.048 6.938 4.048 10.636c0 3.326 2.95 6.112 6.932 6.64.27.058.638.177.731.408.083.21.054.54.027.753l-.118.712c-.036.21-.167.822.72.448.887-.374 4.787-2.82 6.533-4.827C19.362 13.45 19.952 12.1 19.952 10.636zM9.47 12.484H8.01a.378.378 0 0 1-.377-.378V9.522c0-.209.17-.378.378-.378s.378.169.378.378v2.207H9.47c.208 0 .378.169.378.377a.378.378 0 0 1-.378.378zm1.543-.378a.378.378 0 0 1-.756 0V9.522a.378.378 0 0 1 .756 0v2.584zm3.474 0a.378.378 0 0 1-.676.235l-1.33-1.817v1.582a.378.378 0 0 1-.756 0V9.522a.378.378 0 0 1 .675-.235l1.331 1.817V9.522a.378.378 0 0 1 .756 0v2.584zm1.944-1.695a.378.378 0 0 1 0 .756h-.755v.562h.755a.378.378 0 0 1 0 .755h-1.133a.378.378 0 0 1-.378-.377V9.522c0-.209.17-.378.378-.378h1.133a.378.378 0 0 1 0 .756h-.755v.51h.755z"/>
+        </svg>
+        <span>LINE</span>
+      </a>
+
+    </div>
+
+    <footer>© 2026 Daria</footer>
+  </div>
+</body>
+</html>
