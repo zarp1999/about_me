@@ -174,15 +174,24 @@ body {
 /* ── Mobile: name top / 3D center / links bottom ── */
 
 @media (max-width: 768px) {
+  body,
+  #root,
+  .app-wrapper {
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+
   .app {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: minmax(0, auto) minmax(0, 1fr) minmax(0, auto);
     grid-template-areas:
       "header"
       "model"
       "links";
     height: 100dvh;
-    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
   }
 
   .profile-panel {
@@ -194,41 +203,46 @@ body {
     align-items: center;
     text-align: center;
     margin-top: 0;
-    padding: max(4.5rem, calc(env(safe-area-inset-top) + 2.5rem)) 1.5rem 0;
+    padding: max(1.5rem, calc(env(safe-area-inset-top) + 0.75rem)) 1.25rem 0.25rem;
   }
 
   .profile-name {
-    margin-bottom: 0.25rem;
+    font-size: 1.75rem;
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.15em;
   }
 
   .profile-bio {
     margin-bottom: 0;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
 
   .figurine-scene {
     grid-area: model;
-    height: auto;
+    height: 100%;
     min-height: 0;
     flex: unset;
-    padding-top: 3vh;
+    padding-top: 0;
   }
 
   .profile-links {
     grid-area: links;
     align-self: end;
-    padding: 0 1.5rem max(1.25rem, env(safe-area-inset-bottom));
+    gap: 0;
+    padding: 0.25rem 1.25rem max(0.75rem, env(safe-area-inset-bottom));
     width: 100%;
-    max-width: 360px;
+    max-width: 320px;
     margin: 0 auto;
   }
 
   .link-btn {
     justify-content: center;
-    padding-left: 0;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 0.8rem;
     border-left: none;
-    border-bottom: 1px solid rgba(255, 248, 232, 0.15);
-    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 248, 232, 0.12);
   }
 
   .link-btn:last-child {
@@ -239,6 +253,20 @@ body {
     padding-left: 0;
     border-left-color: transparent;
     border-bottom-color: #c9a84c;
+  }
+
+  .link-handle {
+    display: none;
+  }
+
+  .link-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .link-icon svg {
+    width: 16px;
+    height: 16px;
   }
 
   .link-label {
